@@ -12,6 +12,8 @@ import Combine
 class DataController: ObservableObject {
     let container: NSPersistentContainer
     
+    @Published var selectedFilter: Filter? = Filter.all
+    
     static var preview: DataController = {
         let dataController = DataController(inMemory: true)
         dataController.createSampleData()
